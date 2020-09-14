@@ -1,0 +1,50 @@
+<div>
+  <div class="text-center">
+      <fa-icon class="fa-2x" [icon]="faListAlt"></fa-icon>    
+  </div>
+  <hr>  
+  <table class="table table-hover">
+      <thead class="bg-info">
+          <tr>
+              <th>
+                  Titulos
+              </th>
+              <th>
+                  Precio
+              </th>
+              <th>
+                  Plataforma
+              </th>          
+              <th>
+                  Idioma
+              </th>          
+              <th>
+                <button [routerLink]="['/juego/form']" class="btn btn-sm btn-warning" ><fa-icon [icon]="faPencilAlt">Nuevo</fa-icon></button>
+                   
+              </th>
+          </tr>
+      </thead>
+      <tbody>        
+              <tr *ngFor="let item of juegos">
+                  <td>
+                      {{item.titulo}}
+                  </td>
+                  <td>
+                      {{item.precio}}
+                  </td>
+                  <td>
+                      {{item.plataforma}}
+                  </td>                
+                  <td>
+                      {{item.idioma}}
+                  </td>                
+                  <td class="btn-group">
+                      <button [routerLink]="['/juegos', item.id]"class="btn btn-sm btn-info" ><fa-icon [icon]="faEye"></fa-icon></button>                    
+                      <button [routerLink]="['/juego/update', item.id]" class="btn btn-sm btn-warning" ><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                      <button (click)="delete(item)" class="btn btn-sm btn-danger" ><fa-icon [icon]="faTrash"></fa-icon></button>
+                  </td>
+              </tr>
+          
+      </tbody>
+  </table>
+  </div>

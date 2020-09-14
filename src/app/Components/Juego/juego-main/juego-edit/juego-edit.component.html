@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-6 col-md-6 col-sm-6">
+  
+    </div>
+    <div class="col-6 col-md-6 col-sm-6">
+      <fa-icon class="fa-2x" [icon]="faCartPlus"></fa-icon>
+    </div>
+  </div>
+  <hr>
+  <form [formGroup]="formJuego" (ngSubmit)="onSubmit(juego)" class="user" enctype="multipart/form-data" #imageForm = ngForm>
+    <div class="card-body">
+      <div class="row row-cols-2">
+        <div class="col-12 col-sm-12 col-md-6 ">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                  <img [src]="imageToShow"  style="width: 350px; height:300px">
+              </span>
+            </div>
+            <input  type="file" (change)="handleFileInput($event.target.files)"class="form-control-file"  placeholder="Imagen" #Image accept="image/*"  formnovalidate="formnovalidate"/>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 ">        
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faPager"></fa-icon>
+              </span>
+            </div>
+            <input formControlName="titulo" type="text" class="form-control " [(ngModel)]="juego.titulo"
+              placeholder="Titulo" required />
+          </div>
+  
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faDollarSign"></fa-icon>
+              </span>
+            </div>
+            <input formControlName="precio" type="number" min= "0.01" max= "100000" step="0.01" class="form-control form-control-user" [(ngModel)]="juego.precio" placeholder="Precio" required/>
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faPager"></fa-icon>
+              </span>
+            </div>
+            <input formControlName="plataforma" type="text" class="form-control " [(ngModel)]="juego.plataforma"
+              placeholder="Plataforma" required />
+          </div>
+  
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faPager"></fa-icon>
+              </span>
+            </div>
+            <input formControlName="estado" type="text" class="form-control " [(ngModel)]="juego.estado"
+              placeholder="estado" required />
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]='faCalendar'></fa-icon></span>
+            </div>
+            <input formControlName="fecha_lanzamiento" type="date" class="form-control form-control-user" 
+                [(ngModel)]="juego.fecha_lanzamiento" />
+        </div>  
+  
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                
+              </span>
+            </div>
+            <input formControlName="genero" type="text" class="form-control " [(ngModel)]="juego.genero"
+              placeholder="Genero" required />
+          </div>
+  
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faPager"></fa-icon>
+              </span>
+            </div>
+            <input formControlName="idioma" type="text" class="form-control " [(ngModel)]="juego.idioma"
+              placeholder="Idioma" required />
+          </div>
+  
+          <div class="btn-group text-center">
+            <button type="submit" [disabled]="Image.value=='' || !formJuego.valid  " class="btn btn-success">
+              <fa-icon [icon]="faSave"></fa-icon>&nbsp;Guardar
+            </button>
+            <button [routerLink]="['/juegos']"class="btn btn-danger">
+              <fa-icon [icon]="faTimes"></fa-icon>&nbsp;Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

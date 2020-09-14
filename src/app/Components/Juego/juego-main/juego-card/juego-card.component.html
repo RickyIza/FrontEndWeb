@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-6 col-md-6 col-sm-6" style="text-align:left">
+      <a class="nav-link " routerLink="/juegos">
+        <fa-icon [icon]="faList"></fa-icon> Juegos
+      </a>
+    </div>
+    <div class="col-6 col-md-6 col-sm-6" style="text-align: left">
+      <fa-icon class="fa-2x" [icon]="faCartPlus"></fa-icon>
+    </div>
+  </div>
+  <hr>
+  <!-- <form class="user" ng-init="getImageFromService()" >  -->
+    <div class="container">
+      <div class="row row-cols-2">
+        <div class="col-12 col-sm-12 col-md-6 " style="padding-left: auto;" >
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <img [src]="imageToShow" style="width: 350px; height:300px"/>
+              </span>
+            </div>   
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 " style="padding-left: 50px;">
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <fa-icon [icon]="faPager"></fa-icon>
+                  </span>
+                </div>
+                <label class="form-control ">{{ juego.titulo }} </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <fa-icon [icon]="faTag"></fa-icon>
+                  </span>
+                </div>
+                <label class="form-control ">{{ juego.precio}} </label>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faPager"></fa-icon>
+              </span>
+            </div>
+
+          </div>
+          <label for="talla">Plataforma</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faRuler"></fa-icon>
+              </span>
+            </div>
+            <label class="form-control ">{{ juego.plataforma}} </label>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faTag"></fa-icon>
+              </span>
+            </div>
+            <label class="form-control ">{{ juego.estado }} </label>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faGripVertical"></fa-icon>
+              </span>
+            </div>
+            <label class="form-control ">{{ juego.fecha_lanzamiento  }} </label>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="faDollarSign"></fa-icon>
+              </span>
+            </div>
+            <label class="form-control ">{{ juego.genero }} </label>
+          </div>
+
+          
+          <!-- <div class="btn-group text-center">
+                    <button type="submit" [disabled]="Image.value=='' || !formProduct.valid  " class="btn btn-success">
+                      <fa-icon [icon]="faSave"></fa-icon>&nbsp;Guardar
+                    </button>
+                    <button type="reset" (click)="onReset()" class="btn btn-danger">
+                      <fa-icon [icon]="faTimes"></fa-icon>&nbsp;Cancelar
+                    </button>
+                  </div> -->
+        </div>
+      </div>
+    </div>
+  <!-- </form> -->
+  
